@@ -32,6 +32,7 @@ you can use the variables data, type and row
 
     let date    = new Date(data);
     let format  = "{{ $class->format }}";
+    let monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     let month   = formatZero(date.getMonth() + 1);
     let day     = formatZero(date.getDate());
@@ -41,6 +42,7 @@ you can use the variables data, type and row
 
     format = format.replace('Y', date.getFullYear());
     format = format.replace('y', date.getYear());
+    format = format.replace('M', monthNames[date.getMonth()]);
     format = format.replace('m', month);
     format = format.replace('D', date.getDay() + 1);
     format = format.replace('d', day);
